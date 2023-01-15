@@ -7,7 +7,8 @@ const getForecast = (location, callback) => {
             }
             callback(undefined, {
                 location : data.location,
-                forecast: data.forecast
+                forecast: data.forecast,
+                humidity: data.humidity
             })
         })
     })
@@ -32,6 +33,6 @@ weatherForm.addEventListener('submit', (e)=>{
            return firstMsg.textContent = error.error
         }
             firstMsg.textContent = "Location: " + data.location
-            secondMsg.textContent = "Forecast: The weather is " + data.forecast
+            secondMsg.textContent = "Forecast: The weather is " + data.forecast +", Humidity is at "+ data.humidity + "%"
     })    
 })
